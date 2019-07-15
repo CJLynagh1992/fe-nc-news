@@ -1,0 +1,16 @@
+.headerstyle {
+  background: red;
+  padding: 7px;
+  font-family: 'Open Sans';
+  margin-bottom: 15px;
+  border-radius: 4px;
+  box-shadow: 5px 5px #020101;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.linkbuttons {
+  text-decoration: underline;
+  color: rgb(255, 255, 255);
+  padding: 2px 5px;
+  text-align: center;
+}

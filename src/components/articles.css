@@ -1,0 +1,17 @@
+.articledecor {
+  background: rgba(247, 0, 0, 0.425);
+  float: left;
+  margin: 5px;
+  padding: 2px;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 5px 5px #807c7c;
+  color: rgba(70, 70, 70, 0.836);
+  font-family: inherit;
+  text-indent: 1cm;
+}
+
+.articleheading {
+  font-family: 'Merriweather', serif;
+  color: black;
+}
