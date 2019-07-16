@@ -13,6 +13,9 @@ const Navbar = () => {
       <Link className="linkbuttons" to="/articles">
         Articles
       </Link>
+      <Link className="linkbuttons" to="/topics">
+        Topics
+      </Link>
     </div>
   );
 };

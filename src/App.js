@@ -3,10 +3,13 @@ import { Router } from '@reach/router';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Articles from './components/Articles';
+import Article from './components/Article';
+import Topics from './components/Topics';
+import TopicsArticles from './components/TopicsArticles';
 
 class App extends React.Component {
   state = {
-    loggedInUser: ''
+    loggedInUser: 'jessjelly'
   };
   render() {
     return (
@@ -14,7 +17,10 @@ class App extends React.Component {
         <Navbar />
         <Router>
           <Home path="/" />
-          <Articles path="/articles" />
+          <Articles path="/articles/" />
+          <Article path="/articles/:id" />
+          <Topics path="/topics/" />
+          <TopicsArticles path="/topics/:topic" />
         </Router>
       </div>
     );

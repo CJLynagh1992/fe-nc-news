@@ -2,7 +2,7 @@
   background: rgba(247, 0, 0, 0.425);
   float: left;
   margin: 5px;
-  padding: 2px;
+  padding: 5px;
   width: 100%;
   border-radius: 5px;
   box-shadow: 5px 5px #807c7c;
@@ -14,4 +14,32 @@
 .articleheading {
   font-family: 'Merriweather', serif;
   color: black;
+  text-indent: 2cm;
+}
+
+.articlebody {
+  color: black;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: 15px;
+  text-indent: 0cm;
+  text-align: justify;
+  width: 90%;
+}
+
+.commentdecor {
+  background: rgba(250, 248, 248, 0.425);
+  float: left;
+  text-align: justify;
+  color: rgba(7, 6, 6, 0.836);
+  font-family: inherit;
+  text-indent: 0.5cm;
+  width: 95%;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.commentbody {
+  font-family: 'Merriweather', serif;
+  text-indent: 1cm;
 }

@@ -1,0 +1,32 @@
+import React from 'react';
+import './articles.css';
+import { getArticleById } from './api';
+import Comments from './Comments';
+
+class Article extends React.Component {
+  state = {
+    article: {}
+  };
+  render() {
+    const { author, body, created_at, topic, title, comment_count, votes } = this.state;
+    return (
+      <div className="articledecor">
+        <h6>
+          Posted by {author} on {created_at}. Topic: {topic}
+        </h6>
+        <h2 className="articleheading">{title}</h2>
+        <h5>Total Comments: {comment_count}</h5>
+        <h5>Votes: {votes}</h5>
+        <h4 className="articlebody">{body}</h4>
+        <Comments article_id={this.props.id} />
+      </div>
+    );
+  }
+  componentDidMount() {
+    getArticleById(this.props.id).then(article => {
+      this.setState(article);
+    });
+  }
+}
+
+export default Article;
