@@ -18,7 +18,7 @@ class Article extends React.Component {
         <h5>Total Comments: {comment_count}</h5>
         <h5>Votes: {votes}</h5>
         <h4 className="articlebody">{body}</h4>
-        <Comments article_id={this.props.id} />
+        <Comments article_id={this.props.id} username={this.props.username} />
       </div>
     );
   }

@@ -31,3 +31,8 @@ export const getTopicsList = () => {
     return data;
   });
 };
+
+export const postComment = async (article_id, newComment) => {
+  const { data } = await instance.post(`articles/${article_id}/comments`, newComment);
+  return data.comment;
+};

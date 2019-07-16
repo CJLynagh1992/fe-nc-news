@@ -9,15 +9,19 @@ class Articles extends React.Component {
     sort_by: ''
   };
   render() {
+    console.log(this.state.body);
     return (
       <>
         <div>
           <h6>Sort By:</h6>
-          <select onChange={this.handleChange}>
-            <option>Date</option>
-            <option>Comments</option>
-            <option>Votes</option>
-          </select>
+          <form onSubmit={this.handleSubmit}>
+            <select name="sort_by" onChange={this.handleChange}>
+              <option>Date</option>
+              <option>Comments</option>
+              <option>Votes</option>
+            </select>
+            <button>Submit</button>
+          </form>
         </div>
         {this.state.articles.map(article => {
           return (
@@ -36,6 +40,10 @@ class Articles extends React.Component {
       </>
     );
   }
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
 
   componentDidMount() {
     getArticles(this.props.topic).then(({ articles }) => {

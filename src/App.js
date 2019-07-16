@@ -12,13 +12,14 @@ class App extends React.Component {
     loggedInUser: 'jessjelly'
   };
   render() {
+    const { loggedInUser } = this.state;
     return (
       <div>
         <Navbar />
         <Router>
           <Home path="/" />
           <Articles path="/articles/" />
-          <Article path="/articles/:id" />
+          <Article path="/articles/:id" username={loggedInUser} />
           <Topics path="/topics/" />
           <TopicsArticles path="/topics/:topic" />
         </Router>
