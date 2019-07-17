@@ -1,12 +1,11 @@
 .articledecor {
-  background: rgba(247, 0, 0, 0.425);
+  background: rgba(241, 86, 86, 0.425);
   float: left;
-  margin: 5px;
-  padding: 5px;
+  margin: 10px;
+  padding: 20px;
   width: 100%;
-  border-radius: 5px;
-  box-shadow: 5px 5px #807c7c;
-  color: rgba(70, 70, 70, 0.836);
+  border-left: 10px double #e01b01;
+  color: rgba(161, 1, 1, 0.836);
   font-family: inherit;
   text-indent: 1cm;
 }
@@ -27,16 +26,15 @@
 }
 
 .commentdecor {
-  background: rgba(250, 248, 248, 0.425);
+  background: rgb(255, 255, 255);
   float: left;
-  text-align: justify;
-  color: rgba(7, 6, 6, 0.836);
+  margin: 5px;
+  padding: 5px;
+  width: 75%;
+  border-left: 10px double #e01b01;
+  color: rgba(5, 3, 3, 0.836);
   font-family: inherit;
-  text-indent: 0.5cm;
-  width: 95%;
-  margin: 10px;
-  padding: 15px;
-  border-radius: 8px;
+  text-indent: 1cm;
 }
 
 .commentbody {

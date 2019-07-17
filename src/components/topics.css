@@ -1,18 +1,16 @@
 .topicdecor {
-  background: rgba(247, 0, 0, 0.425);
+  background: rgba(241, 86, 86, 0.425);
   float: left;
-  margin: 5px;
-  padding: 5px;
+  margin: 10px;
+  padding: 20px;
   width: 100%;
-  border-radius: 5px;
-  box-shadow: 5px 5px #807c7c;
-  color: rgba(70, 70, 70, 0.836);
+  border-left: 10px double #e01b01;
+  color: rgba(0, 0, 0, 0.836);
   font-family: inherit;
   text-indent: 1cm;
 }
 
 .topiclink {
   font-family: 'Merriweather', serif;
-  color: black;
   text-indent: 2cm;
 }

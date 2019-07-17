@@ -4,8 +4,8 @@
   padding: 20px;
   font-family: 'Open Sans';
   margin-bottom: 15px;
-  border-radius: 4px;
-  box-shadow: 5px 5px #020101;
+
+  border-left: 10px double #030101;
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 

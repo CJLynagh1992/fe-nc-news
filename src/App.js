@@ -9,7 +9,7 @@ import TopicsArticles from './components/TopicsArticles';
 
 class App extends React.Component {
   state = {
-    loggedInUser: ''
+    loggedInUser: 'jessjelly'
   };
   render() {
     const { loggedInUser } = this.state;

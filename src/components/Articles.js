@@ -16,7 +16,7 @@ class Articles extends React.Component {
     if (this.state.isLoading) return <Loading />;
     return (
       <>
-        <Sorter setSort={this.setSort} />
+        <Sorter setSort={this.setSort} type="articles" />
         {this.state.articles.map(article => {
           return (
             <div className="articledecor" key={article.article_id}>

@@ -22,9 +22,16 @@ export const getArticleById = async id => {
   return data.article;
 };
 
-export const getCommentsByArticleId = async article_id => {
-  const { data } = await instance.get(`/articles/${article_id}/comments`);
-  return data.comments;
+export const getCommentsByArticleId = async (article_id, sort) => {
+  return instance
+    .get(`/articles/${article_id}/comments`, {
+      params: {
+        sort_by: sort
+      }
+    })
+    .then(({ data }) => {
+      return data.comments;
+    });
 };
 
 export const getTopicsList = () => {
