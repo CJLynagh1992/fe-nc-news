@@ -6,6 +6,7 @@ import Articles from './components/Articles';
 import Article from './components/Article';
 import Topics from './components/Topics';
 import TopicsArticles from './components/TopicsArticles';
+import './App.css';
 
 class App extends React.Component {
   state = {
@@ -14,7 +15,7 @@ class App extends React.Component {
   render() {
     const { loggedInUser } = this.state;
     return (
-      <div>
+      <div className="App">
         <Navbar />
         <Router>
           <Home path="/" />

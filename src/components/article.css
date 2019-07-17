@@ -1,3 +1,8 @@
+.articledecor {
+  display: flex;
+  flex-direction: column;
+}
+
 .sectiontag {
   display: flex;
   flex-direction: row wrap;
@@ -10,4 +15,7 @@
   align-items: center;
   align-content: center;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.articleinfo {
+  flex-direction: column;
 }

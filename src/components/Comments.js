@@ -4,25 +4,27 @@ import CommentAdder from './CommentAdder';
 import { deleteComment } from './api';
 import VoterComponent from './VoterComponent';
 import Sorter from './Sorter';
+import './comments.css';
 
 class Comments extends React.Component {
   state = { comments: [], sort: 'created_at' };
   render() {
-    console.log(this.state.sort);
     return (
       <>
         <CommentAdder article_id={this.props.article_id} addComment={this.addComment} username={this.props.username} />
         <Sorter setSort={this.setSort} type="comments" />
         {this.state.comments.map(comment => {
           return (
-            <div className="commentdecor" key={comment.comment_id}>
-              <h6>
-                Comment posted by {comment.author} on {new Date(comment.created_at).toString().slice(0, 22)}
-              </h6>
+            <section className="commentsectiontag">
               <VoterComponent type="comment" votes={comment.votes} id={comment.comment_id} />
-              <h5 className="commentbody">{comment.body}</h5>
-              {this.props.username === comment.author && <button onClick={() => this.handleDelete(comment.comment_id)}>Delete Comment</button>}
-            </div>
+              <div className="cardsdisplay" key={comment.comment_id}>
+                <h6>
+                  Comment posted by {comment.author} on {new Date(comment.created_at).toString().slice(0, 21)}
+                </h6>
+                <h5 className="commentbody">{comment.body}</h5>
+                {this.props.username === comment.author && <button onClick={() => this.handleDelete(comment.comment_id)}>Delete Comment</button>}
+              </div>
+            </section>
           );
         })}
       </>

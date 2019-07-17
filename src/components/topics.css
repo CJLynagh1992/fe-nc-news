@@ -1,16 +1,24 @@
 .topicdecor {
-  background: rgba(241, 86, 86, 0.425);
-  float: left;
-  margin: 10px;
-  padding: 20px;
-  width: 100%;
-  border-left: 10px double #e01b01;
-  color: rgba(0, 0, 0, 0.836);
-  font-family: inherit;
-  text-indent: 1cm;
+  display: flex;
+  flex-direction: row wrap;
+  background: rgb(248, 205, 205);
+  font-family: 'Open Sans';
+  margin-bottom: 3px;
+  width: 100vw;
+  box-sizing: border-box;
+
+  border: 4px inset rgba(250, 11, 3, 0.94);
+  align-items: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  align-items: center;
+  padding: 10px;
 }
 
 .topiclink {
-  font-family: 'Merriweather', serif;
-  text-indent: 2cm;
+  width: 10%;
+  text-align: center;
+}
+
+.textlink:hover {
+  color: red;
 }

@@ -1,17 +1,25 @@
 .headerstyle {
-  background: red;
-  margin: 10px;
-  padding: 20px;
+  background: rgb(245, 25, 25);
   font-family: 'Open Sans';
   margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 
-  border-left: 10px double #030101;
+  border: 5px double #030101;
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: center;
+  width: 100vw;
+}
+
+.linkbox {
+  flex-direction: row wrap;
+  padding: 1cm;
 }
 
 .linkbuttons {
   text-decoration: underline;
   color: rgb(255, 255, 255);
   padding: 2px 5px;
-  text-align: center;
+  text-align: centre;
 }

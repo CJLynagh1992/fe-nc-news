@@ -1,5 +1,6 @@
 import React from 'react';
 import { vote } from './api';
+import './votercomponent.css';
 
 class VoterComponent extends React.Component {
   state = {
@@ -10,12 +11,12 @@ class VoterComponent extends React.Component {
     const { voteModifier, err } = this.state;
     if (err) return <p>{err}</p>;
     return (
-      <div>
-        <button onClick={() => this.vote(1)} disabled={voteModifier === 1}>
+      <div className="votercomponent">
+        <button className="votebuttons" onClick={() => this.vote(1)} disabled={voteModifier === 1}>
           +1
         </button>
-        <p> Votes: {this.props.votes + this.state.voteModifier}</p>
-        <button onClick={() => this.vote(-1)} disabled={voteModifier === -1}>
+        <p>{this.props.votes + this.state.voteModifier}</p>
+        <button className="votebuttons" onClick={() => this.vote(-1)} disabled={voteModifier === -1}>
           -1
         </button>
       </div>

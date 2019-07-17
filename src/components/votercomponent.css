@@ -1,0 +1,12 @@
+.votercomponent {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  align-self: center;
+  text-align: center;
+}
+
+.votebuttons {
+  width: 75%;
+  align-self: center;
+}

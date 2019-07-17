@@ -11,10 +11,12 @@ class Topics extends React.Component {
     return this.state.topics.map(topic => {
       return (
         <div className="topicdecor" key={topic.slug}>
-          <Link to={`/topics/${topic.slug}`} className="topicLink">
-            {topic.slug}
+          <Link to={`/topics/${topic.slug}`} className="topiclink">
+            {topic.slug === 'football' ? <i className="em em-soccer" /> : topic.slug === 'cooking' ? <i className="em em-fork_and_knife" /> : topic.slug === 'coding' ? <i className="em em-computer" /> : topic.slug}
           </Link>
-          <h4>{topic.description}</h4>
+          <Link className="textlink" to={`/topics/${topic.slug}`}>
+            {topic.description}
+          </Link>
         </div>
       );
     });

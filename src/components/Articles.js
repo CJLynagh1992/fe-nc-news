@@ -19,16 +19,17 @@ class Articles extends React.Component {
         <Sorter setSort={this.setSort} type="articles" />
         {this.state.articles.map(article => {
           return (
-            <div className="articledecor" key={article.article_id}>
-              <h6>
-                Posted by {article.author} on {new Date(article.created_at).toString().slice(0, 24)} <Link to={`/topics/${article.topic}`}> Topic: {article.topic}</Link>
-              </h6>
-              <Link to={`/articles/${article.article_id}`} className="articleheading">
-                {article.title}
-              </Link>
-              <h5>Total Comments: {article.comment_count}</h5>
+            <section className="sectiontag">
               <VoterComponent type="article" votes={article.votes} id={article.article_id} />
-            </div>
+              <div key={article.article_id}>
+                <h6>
+                  Posted by {article.author} on {new Date(article.created_at).toString().slice(0, 21)}
+                  <Link to={`/topics/${article.topic}`}> Topic: {article.topic}</Link>
+                </h6>
+                <Link to={`/articles/${article.article_id}`}>{article.title}</Link>
+                <h5>Comments: {article.comment_count}</h5>
+              </div>
+            </section>
           );
         })}
       </>
