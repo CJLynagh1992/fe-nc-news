@@ -18,7 +18,7 @@ class Comments extends React.Component {
               </h6>
               <VoterComponent type="comment" votes={comment.votes} id={comment.comment_id} />
               <h5 className="commentbody">{comment.body}</h5>
-              <button onClick={() => this.handleDelete(comment.comment_id)}>Delete Comment</button>
+              {this.props.username === comment.author && <button onClick={() => this.handleDelete(comment.comment_id)}>Delete Comment</button>}
             </div>
           );
         })}
