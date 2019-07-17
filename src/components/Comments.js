@@ -1,6 +1,8 @@
 import React from 'react';
 import { getCommentsByArticleId } from './api';
 import CommentAdder from './CommentAdder';
+import { deleteComment } from './api';
+import VoterComponent from './VoterComponent';
 
 class Comments extends React.Component {
   state = { comments: [] };
@@ -14,7 +16,9 @@ class Comments extends React.Component {
               <h6>
                 Comment posted by {comment.author} on {comment.created_at}. Total Votes: {comment.votes}
               </h6>
+              <VoterComponent type="comment" votes={comment.votes} id={comment.comment_id} />
               <h5 className="commentbody">{comment.body}</h5>
+              <button onClick={() => this.handleDelete(comment.comment_id)}>Delete Comment</button>
             </div>
           );
         })}
@@ -31,6 +35,11 @@ class Comments extends React.Component {
     this.setState(({ comments }) => {
       return { comments: [commentToAdd, ...comments] };
     });
+  };
+
+  handleDelete = comment_id => {
+    deleteComment(comment_id); // error state
+    this.setState({ comments: this.state.comments.filter(comment => comment.comment_id !== comment_id) });
   };
 }
 
