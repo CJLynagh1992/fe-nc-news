@@ -2,14 +2,16 @@ import React from 'react';
 import './articles.css';
 import { Link } from '@reach/router';
 import { getArticles } from './api';
+import Loading from './Loading';
 
 class Articles extends React.Component {
   state = {
     articles: [],
-    sort_by: ''
+    sort_by: '',
+    isLoading: true
   };
   render() {
-    console.log(this.state.body);
+    if (this.state.isLoading) return <Loading />;
     return (
       <>
         <div>
@@ -47,7 +49,7 @@ class Articles extends React.Component {
 
   componentDidMount() {
     getArticles(this.props.topic).then(({ articles }) => {
-      this.setState({ articles });
+      this.setState({ articles, isLoading: false });
     });
   }
 }
