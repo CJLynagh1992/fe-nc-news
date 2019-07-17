@@ -12,9 +12,9 @@ class Comments extends React.Component {
         <CommentAdder article_id={this.props.article_id} addComment={this.addComment} username={this.props.username} />
         {this.state.comments.map(comment => {
           return (
-            <div className="commentdecor">
+            <div className="commentdecor" key={comment.comment_id}>
               <h6>
-                Comment posted by {comment.author} on {comment.created_at}. Total Votes: {comment.votes}
+                Comment posted by {comment.author} on {new Date(comment.created_at).toString().slice(0, 24)}. Total Votes: {comment.votes}
               </h6>
               <VoterComponent type="comment" votes={comment.votes} id={comment.comment_id} />
               <h5 className="commentbody">{comment.body}</h5>

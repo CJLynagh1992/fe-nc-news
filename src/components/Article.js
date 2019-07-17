@@ -12,7 +12,7 @@ class Article extends React.Component {
     return (
       <div className="articledecor">
         <h6>
-          Posted by {author} on {created_at}. Topic: {topic}
+          Posted by {author} on {new Date(created_at).toString().slice(0, 24)}. Topic: {topic}
         </h6>
         <h2 className="articleheading">{title}</h2>
         <h5>Total Comments: {comment_count}</h5>

@@ -21,7 +21,7 @@ class Articles extends React.Component {
           return (
             <div className="articledecor" key={article.article_id}>
               <h6>
-                Posted by {article.author} on {article.created_at}. <Link to={`/topics/${article.topic}`}> Topic: {article.topic}</Link>
+                Posted by {article.author} on {new Date(article.created_at).toString().slice(0, 24)} <Link to={`/topics/${article.topic}`}> Topic: {article.topic}</Link>
               </h6>
               <Link to={`/articles/${article.article_id}`} className="articleheading">
                 {article.title}
