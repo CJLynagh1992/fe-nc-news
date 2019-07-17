@@ -1,6 +1,8 @@
 import React from 'react';
 import './articles.css';
 import { getArticleById } from './api';
+import { Link } from '@reach/router';
+
 import Comments from './Comments';
 
 class Article extends React.Component {
@@ -12,7 +14,7 @@ class Article extends React.Component {
     return (
       <div className="articledecor">
         <h6>
-          Posted by {author} on {new Date(created_at).toString().slice(0, 24)}. Topic: {topic}
+          Posted by {author} on {new Date(created_at).toString().slice(0, 24)}. <Link to={`/topics/${topic}`}> Topic: {topic}</Link>
         </h6>
         <h2 className="articleheading">{title}</h2>
         <h5>Total Comments: {comment_count}</h5>
