@@ -5,15 +5,18 @@ import { getArticles } from './api';
 import Loading from './Loading';
 import VoterComponent from './VoterComponent';
 import Sorter from './Sorter';
+import ErrorHandling from './ErrorHandling';
 
 class Articles extends React.Component {
   state = {
     articles: [],
     sort: 'created_at',
-    isLoading: true
+    isLoading: true,
+    err: null
   };
   render() {
     if (this.state.isLoading) return <Loading />;
+    if (this.state.err) return <ErrorHandling err={this.state.err} />;
     return (
       <>
         <Sorter setSort={this.setSort} type="articles" />
@@ -47,9 +50,13 @@ class Articles extends React.Component {
   };
 
   componentDidMount() {
-    getArticles(this.props.topic).then(({ articles }) => {
-      this.setState({ articles, isLoading: false });
-    });
+    getArticles(this.props.topic)
+      .then(({ articles }) => {
+        this.setState({ articles, isLoading: false });
+      })
+      .catch(err => {
+        this.setState({ err, isLoading: false });
+      });
   }
 
   componentDidUpdate(prevProps, prevState) {
