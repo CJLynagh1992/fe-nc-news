@@ -1,10 +1,15 @@
 import React from 'react';
 
-function Home() {
+const Home = ({ setUser }) => {
   return (
-    <div>
-      <h1>Welcome to my NC News application. </h1>
-    </div>
+    <select onChange={setUser}>
+      <option disabled value="Please select Username">
+        Please select your username
+      </option>
+      <option value="jessjelly">jessjelly</option>
+      <option value="grumpy19">grumpy19</option>
+      <option value="tickle122">tickle122</option>
+    </select>
   );
-}
+};
 export default Home;

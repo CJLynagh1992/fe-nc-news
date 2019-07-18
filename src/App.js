@@ -18,7 +18,7 @@ class App extends React.Component {
       <div className="App">
         <Navbar />
         <Router>
-          <Home path="/" />
+          <Home path="/" setUser={this.setUser} />
           <Articles path="/articles/" />
           <Article path="/articles/:id" username={loggedInUser} />
           <Topics path="/topics/" />
@@ -27,6 +27,11 @@ class App extends React.Component {
       </div>
     );
   }
+
+  setUser = event => {
+    const { value } = event.target;
+    this.setState({ loggedInUser: value });
+  };
 }
 
 export default App;

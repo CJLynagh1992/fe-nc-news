@@ -9,7 +9,7 @@ class CommentAdder extends React.Component {
   render() {
     const { body } = this.state;
     return (
-      <form onSubmit={this.handleSumbit}>
+      <form onSubmit={this.handleSubmit}>
         <label htmlFor="body">
           Penny for your thoughts:
           <input type="text" name="body" id="body" onChange={this.handleChange} value={body} required />
@@ -24,7 +24,7 @@ class CommentAdder extends React.Component {
     this.setState({ [name]: value });
   };
 
-  handleSumbit = event => {
+  handleSubmit = event => {
     event.preventDefault();
     const { body } = this.state;
     const { article_id, username } = this.props;

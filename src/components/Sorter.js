@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Sorter = ({ setSort, type }) => {
-  // console.log(type);
   return (
     <select onChange={setSort}>
       <option value="created_at">Date</option>
