@@ -44,11 +44,6 @@ class Articles extends React.Component {
     this.setState({ sort: value });
   };
 
-  handleChange = event => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-  };
-
   componentDidMount() {
     getArticles(this.props.topic)
       .then(({ articles }) => {
@@ -60,7 +55,7 @@ class Articles extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.sort !== this.state.sort) {
+    if (prevState.sort !== this.state.sort || prevProps.topic !== this.props.topic) {
       getArticles(this.props.topic, this.state.sort).then(({ articles }) => {
         this.setState({ articles });
       });

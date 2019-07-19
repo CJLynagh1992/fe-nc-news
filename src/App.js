@@ -5,8 +5,8 @@ import Home from './components/Home';
 import Articles from './components/Articles';
 import Article from './components/Article';
 import Topics from './components/Topics';
-import ArticlesByTopic from './components/ArticlesByTopic';
 import './App.css';
+import ErrorHandling from './components/ErrorHandling';
 
 class App extends React.Component {
   state = {
@@ -22,7 +22,9 @@ class App extends React.Component {
           <Articles path="/articles/" />
           <Article path="/articles/:id" username={loggedInUser} />
           <Topics path="/topics/" />
-          <ArticlesByTopic path="/topics/:topic" />
+          <Articles path="/topics/:topic" />
+
+          <ErrorHandling default />
         </Router>
       </div>
     );
