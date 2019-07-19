@@ -5,7 +5,7 @@ import Home from './components/Home';
 import Articles from './components/Articles';
 import Article from './components/Article';
 import Topics from './components/Topics';
-import TopicsArticles from './components/TopicsArticles';
+import ArticlesByTopic from './components/ArticlesByTopic';
 import './App.css';
 
 class App extends React.Component {
@@ -22,7 +22,7 @@ class App extends React.Component {
           <Articles path="/articles/" />
           <Article path="/articles/:id" username={loggedInUser} />
           <Topics path="/topics/" />
-          <TopicsArticles path="/topics/:topic" />
+          <ArticlesByTopic path="/topics/:topic" />
         </Router>
       </div>
     );

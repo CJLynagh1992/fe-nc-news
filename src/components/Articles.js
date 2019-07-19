@@ -22,9 +22,9 @@ class Articles extends React.Component {
         <Sorter setSort={this.setSort} type="articles" />
         {this.state.articles.map(article => {
           return (
-            <section className="sectiontag">
+            <section className="sectiontag" key={article.article_id}>
               <VoterComponent type="article" votes={article.votes} id={article.article_id} />
-              <div key={article.article_id}>
+              <div>
                 <h6>
                   Posted by {article.author} on {new Date(article.created_at).toString().slice(0, 21)}
                   <Link to={`/topics/${article.topic}`}> Topic: {article.topic}</Link>

@@ -15,9 +15,9 @@ class Comments extends React.Component {
         <Sorter setSort={this.setSort} type="comments" />
         {this.state.comments.map(comment => {
           return (
-            <section className="commentsectiontag">
+            <section className="commentsectiontag" key={comment.comment_id}>
               <VoterComponent type="comment" votes={comment.votes} id={comment.comment_id} />
-              <div className="cardsdisplay" key={comment.comment_id}>
+              <div className="cardsdisplay">
                 <h6>
                   Comment posted by {comment.author} on {new Date(comment.created_at).toString().slice(0, 21)}
                 </h6>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Articles from './Articles';
 
-class TopicsArticles extends React.Component {
+class ArticlesByTopic extends React.Component {
   render() {
     return (
       <div>
@@ -11,4 +11,4 @@ class TopicsArticles extends React.Component {
   }
 }
 
-export default TopicsArticles;
+export default ArticlesByTopic;
