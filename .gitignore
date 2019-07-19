@@ -23,5 +23,6 @@ yarn-debug.log*
 yarn-error.log*
  
 # ignore md files
-*.md 
-
+ProjectChecklist.md
+ProjectBrief.md 
+Review.md
