@@ -6,7 +6,7 @@ const Home = ({ setUser }) => {
     <>
       <section className="homepage">
         <select className="select" onChange={setUser}>
-          <option value="">Please select your Username</option>
+          <option value="">Please select a username...</option>
           <option value="jessjelly">jessjelly</option>
           <option value="grumpy19">grumpy19</option>
           <option value="tickle122">tickle122</option>

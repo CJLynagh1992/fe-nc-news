@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from '@reach/router';
 import './navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ username }) => {
   return (
     <div className="headerstyle">
       <h2>Welcome to NC News</h2>
@@ -20,6 +20,9 @@ const Navbar = () => {
         <Link className="linkbuttons" to="/topics">
           Topics
         </Link>
+      </div>
+      <div>
+        <h4>Current User: {username}</h4>
       </div>
     </div>
   );

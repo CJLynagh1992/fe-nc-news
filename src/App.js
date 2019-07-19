@@ -16,7 +16,7 @@ class App extends React.Component {
     const { loggedInUser } = this.state;
     return (
       <div className="App">
-        <Navbar />
+        <Navbar username={loggedInUser} />
         <Router>
           <Home path="/" setUser={this.setUser} />
           <Articles path="/articles/" />
