@@ -14,6 +14,7 @@ const Navbar = ({ username }) => {
         <Link className="linkbuttons" to="/">
           Home
         </Link>
+
         <Link className="linkbuttons" to="/articles">
           Articles
         </Link>

@@ -14,8 +14,6 @@ const Home = ({ setUser }) => {
           <option value="weegembump">weegembump</option>
           <option value="happyamy2016">happyamy2016</option>
         </select>
-
-        <img className="homepageimage" src="https://nerdist.com/wp-content/uploads/2019/03/jk-simmons-jjj-header-1200x676.jpg" alt="https://i.ytimg.com/vi/fY7kIbkmnpc/maxresdefault.jpg" />
       </section>
     </>
   );

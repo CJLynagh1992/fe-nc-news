@@ -23,7 +23,6 @@ class App extends React.Component {
           <Article path="/articles/:id" username={loggedInUser} />
           <Topics path="/topics/" />
           <Articles path="/topics/:topic" />
-
           <ErrorHandling default />
         </Router>
       </div>
