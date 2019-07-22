@@ -26,7 +26,6 @@ class Comments extends React.Component {
   componentDidMount() {
     getCommentsByArticleId(this.props.article_id)
       .then(comments => {
-        console.log(comments);
         this.setState({ comments, isLoading: false });
       })
       .catch(err => {
