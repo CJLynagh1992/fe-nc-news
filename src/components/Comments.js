@@ -2,38 +2,36 @@ import React from 'react';
 import { getCommentsByArticleId } from './api';
 import CommentAdder from './CommentAdder';
 import { deleteComment } from './api';
-import VoterComponent from './VoterComponent';
 import Sorter from './Sorter';
 import './comments.css';
+import CommentCard from './CommentCard';
+import ErrorHandling from './ErrorHandling';
+import Loading from './Loading';
 
 class Comments extends React.Component {
-  state = { comments: [], sort: 'created_at' };
+  state = { comments: [], sort: 'created_at', isLoading: true };
   render() {
+    if (this.state.isLoading) return <Loading />;
+    if (this.state.err) return <ErrorHandling err={this.state.err} />;
     return (
       <>
         <CommentAdder article_id={this.props.article_id} addComment={this.addComment} username={this.props.username} />
         <Sorter setSort={this.setSort} type="comments" />
         {this.state.comments.map(comment => {
-          return (
-            <section className="commentsectiontag" key={comment.comment_id}>
-              <VoterComponent type="comment" votes={comment.votes} id={comment.comment_id} />
-              <div className="cardsdisplay">
-                <h6>
-                  Comment posted by {comment.author} on {new Date(comment.created_at).toString().slice(0, 21)}
-                </h6>
-                <h5 className="commentbody">{comment.body}</h5>
-                {this.props.username === comment.author && <button onClick={() => this.handleDelete(comment.comment_id)}>Delete Comment</button>}
-              </div>
-            </section>
-          );
+          return <CommentCard comment={comment} key={comment.comment_id} username={this.props.username} handleDelete={this.handleDelete} />;
         })}
       </>
     );
   }
   componentDidMount() {
-    getCommentsByArticleId(this.props.article_id).then(comments => {
-      this.setState({ comments });
-    });
+    getCommentsByArticleId(this.props.article_id)
+      .then(comments => {
+        console.log(comments);
+        this.setState({ comments, isLoading: false });
+      })
+      .catch(err => {
+        this.setState({ err, isLoading: false });
+      });
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.sort !== this.state.sort) {
